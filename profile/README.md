@@ -28,6 +28,9 @@ Lastly, the MongoDB database servers as a place to hold the input videos and out
 
 # Back-end Structure and Framework -- NerF Technology via COLMAP and Structure for motion implemented by TensorRF
 In a general, NerF is a neural network that generates novel views of complex 3D scenes with 2d images and their coordinates. It works by taking input images representing a scene and interpolating between them to render one complete scene. A NeRF uses a sparse set of input views to optimize a continuous volumetric scene function. The result of this optimization is the ability to produce novel views of a complex scene.
+
+
+
 ![Worker_](https://user-images.githubusercontent.com/75590646/185227619-aac5918a-e435-4c4a-993f-277f244f2c21.png)
 
 
