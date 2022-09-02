@@ -2,9 +2,12 @@
 
 # What is NeRF?
 In the last two years there has been an explosion of research surrounding NeRFs, or Neural Radiance Fields, as a new way to render 3D scenes from a set of 2D images. This technology is rapidly developing, and it may be the best path forwards to photorealistic rendering of viewpoints never before seen before by a camera. Many large research labs like Facebook AI and Google research are pursuing this technology in order to render realistic simulations for self-driving cars and to improve the usability of 3D scans. Our project, NeRF or Nothing, will be a web application based on this technology that allows people to input videos or collections of photos and render novel realistic views of the scene they captured. This will include the ability for users to create “flythroughs” or move virtual cameras through scene's they have captured to create videos from unseen perspectives.
+
+Please see the wiki in vidtonerf for additional learning resources and information.
   
   
   # High level overview
+### More detailed descriptions in the vidtonerf repo.
  In general, the project consists of the frontend website that takes the input video from user, a backend server that is implemented with TensorF and Colmap that process the video and creates the 3D fly through of the object, and a web server that is builded with flask that serves as a database to connect and pass through data between the frontend and backend. Lastly, the connections between all the branches will the a set of HTTP requests. 
 
 In the beginning, the user uploads a video to the frontend website, that video will then be send to the Web server, more specifically the MongoDB database. Then, the flask web server will send the input video to RabbitMQ, which is an asynchronies messenger that hosts two of the queue for processing the video. The video will first be send to the structure for motion queue and ready for the structure for motion worker to process the worker to process the video, which will take approximately 10 -15 minutes. Then, the video and the process data will be send out of the SFM queue, and goes into the NerF queue and ready for the NerF worker to process. When the 3D fly through object is created with the NeRF worker, the 3D fly through object will be send out of the RabbitMQ, and back to Web server, sorted in the MongoDB database ready for the Front-end VueJS to access, and displayed in the page.
