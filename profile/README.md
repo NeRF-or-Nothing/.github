@@ -6,4 +6,4 @@ In the last two years there has been an explosion of research surrounding NeRFs,
 Please see the wiki in vidtonerf for additional learning resources and information.
   
 # New here?
-Checkout the vidtonerf repo below
+Check out the vidtonerf repo below
